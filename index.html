@@ -11,16 +11,135 @@
     <nav class="navbar">
         <a href="index.html" class="brand">🌱 GrowStrong</a>
         <div class="nav-links">
-            <a href="why.html">Why Grow?</a>
-            <a href="process.html">Process</a>
-            <a href="step1.html">Start</a>
-            <a href="resources.html">Resources</a>
-            <a href="testimonials.html">Stories</a>
-            <a href="contact.html">Contact</a>
-            <button id="darkModeToggle">🌙</button>
+            <a href="importance.html" class="nav-link">Why Important?</a>
+            <a href="process.html" class="nav-link">Process</a>
+            <a href="step1.html" class="nav-link">Start</a>
+            <a href="resources.html" class="nav-link">Resources</a>
+            <a href="testimonials.html" class="nav-link">Stories</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <button id="darkModeToggle" title="Toggle dark mode">🌙</button>
         </div>
     </nav>
 
     <!-- Feature 2: Hero Section with Animated CTA -->
     <section class="hero">
-        <h1>Unlock Your Full Potential</h1
+        <h1>Unlock Your Full Potential</h1>
+        <p class="hero-text">Transform your life through continuous personal development</p>
+        <a href="step1.html" class="cta-button">Start Your Journey</a>
+    </section>
+
+    <!-- Feature 3: Progress Tracker -->
+    <section class="progress-tracker">
+        <h2>Your Growth Journey</h2>
+        <div class="phases">
+            <div class="phase">
+                <div class="phase-icon">🧠</div>
+                <h3>Mindset</h3>
+                <p>Develop a growth-oriented mindset</p>
+            </div>
+            <div class="phase">
+                <div class="phase-icon">⚡</div>
+                <h3>Habits</h3>
+                <p>Build powerful daily routines</p>
+            </div>
+            <div class="phase">
+                <div class="phase-icon">🎯</div>
+                <h3>Consistency</h3>
+                <p>Maintain long-term progress</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 4: Testimonials -->
+    <section class="testimonials">
+        <h2>Success Stories</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial">
+                <img src="https://i.pravatar.cc/150?img=1" alt="Sarah" class="testimonial-image">
+                <p>"This program transformed my approach to personal growth."</p>
+                <cite>- Sarah Johnson</cite>
+            </div>
+            <div class="testimonial">
+                <img src="https://i.pravatar.cc/150?img=2" alt="Michael" class="testimonial-image">
+                <p>"I achieved more in 6 months than in the past 5 years."</p>
+                <cite>- Michael Chen</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 5: Resource Library -->
+    <section class="resources">
+        <h2>Growth Resources</h2>
+        <div class="resource-grid">
+            <div class="resource-card">
+                <h3>📚 Recommended Books</h3>
+                <ul>
+                    <li>Atomic Habits</li>
+                    <li>Mindset: The New Psychology of Success</li>
+                    <li>Deep Work</li>
+                </ul>
+            </div>
+            <div class="resource-card">
+                <h3>🎯 Goal Setting Templates</h3>
+                <a href="#" class="download-btn">Download Free Templates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 6: Skill Calculator -->
+    <section class="calculator">
+        <h2>Mastery Calculator</h2>
+        <div class="calculator-container">
+            <div class="input-group">
+                <label for="hours-per-day">Hours per day:</label>
+                <input type="number" id="hours-per-day" min="0.5" max="12" step="0.5" value="2">
+            </div>
+            <div class="input-group">
+                <label for="skill-complexity">Skill complexity:</label>
+                <select id="skill-complexity">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+            <button onclick="calculateMastery()" class="calc-btn">Calculate Time to Mastery</button>
+            <div id="result" class="calculator-result"></div>
+        </div>
+    </section>
+
+    <!-- Feature 7: Contact Section -->
+    <section class="contact">
+        <h2>Get Personalized Guidance</h2>
+        <div class="contact-container">
+            <form id="mentorForm" class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <select required>
+                    <option value="">Select Area of Focus</option>
+                    <option value="mindset">Mindset</option>
+                    <option value="habits">Habits</option>
+                    <option value="goals">Goal Setting</option>
+                </select>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-btn">Connect with a Mentor</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Feature 8: Newsletter Signup -->
+    <section class="newsletter">
+        <h2>Weekly Growth Tips</h2>
+        <p>Join our community and receive expert advice every week</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 GrowStrong. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
