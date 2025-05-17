@@ -260,16 +260,6 @@ footer {
     padding: 2rem;
 }
 
-.footer-links {
-    margin-top: 1rem;
-}
-
-.footer-links a {
-    color: #f3f4f6;
-    text-decoration: none;
-    margin: 0 1rem;
-}
-
 /* Buttons */
 .btn,
 .submit-btn,
@@ -319,10 +309,10 @@ footer {
         color: #f3f4f6;
     }
 
-    .phase,
-    .testimonial,
-    .resource-card,
-    .calculator-container {
+    .content-card,
+    .step-card,
+    .calculator-container,
+    .resource-card {
         background: #27272a;
         color: #f3f4f6;
     }
@@ -335,14 +325,13 @@ footer {
         border-color: #374151;
     }
 
-    .progress-tracker,
-    .resources,
-    .contact {
-        background: #18181b;
+    .testimonial {
+        background: #27272a;
+        color: #f3f4f6;
     }
 }
 
-/* Progressive Enhancement */
+/* Progressive Enhancement Styles */
 .fade-in-section {
     opacity: 0;
     transform: translateY(20px);
@@ -356,45 +345,17 @@ footer {
     }
 }
 
-/* Content Cards */
-.testimonial,
-.resource-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Remove JavaScript dependencies */
+.calculator-result {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    background: rgba(99, 102, 241, 0.1);
 }
 
-/* Forms */
 .newsletter-form,
 .contact-form {
-    display: grid;
-    gap: 1rem;
-    max-width: 500px;
-    margin: 2rem auto 0;
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-button {
-    background: #6366f1;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background: #4f46e5;
+    opacity: 1;
 }
 
 /* Responsive Design */
@@ -407,9 +368,64 @@ button:hover {
     .nav-links {
         flex-direction: column;
         width: 100%;
-        text-align: center;
     }
 
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .cta-button,
+    .newsletter,
+    form,
+    .btn {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+    }
+
+    .hero {
+        height: auto;
+        background: none !important;
+        color: black !important;
+        padding: 0;
+    }
+
+    .hero h1 {
+        font-size: 24pt;
+    }
+
+    .phase,
+    .resource-card,
+    .testimonial {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border: 1px solid #ddd;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+}
+
+/* Better Mobile Styles */
+@media (max-width: 480px) {
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -422,7 +438,41 @@ button:hover {
         grid-template-columns: 1fr;
     }
 
-    .newsletter-form {
-        padding: 0 1rem;
+    .resource-grid {
+        grid-template-columns: 1fr;
     }
+
+    .testimonial-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-container {
+        padding: 1rem;
+    }
+}
+
+/* Focus Styles for Accessibility */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #6366f1;
+    outline-offset: 2px;
+}
+
+/* Skip to Main Content */
+.skip-to-main {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+
+.skip-to-main:focus {
+    left: 50%;
+    transform: translateX(-50%);
 }
