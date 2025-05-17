@@ -260,6 +260,16 @@ footer {
     padding: 2rem;
 }
 
+.footer-links {
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: #f3f4f6;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
 /* Buttons */
 .btn,
 .submit-btn,
@@ -309,10 +319,10 @@ footer {
         color: #f3f4f6;
     }
 
-    .content-card,
-    .step-card,
-    .calculator-container,
-    .resource-card {
+    .phase,
+    .testimonial,
+    .resource-card,
+    .calculator-container {
         background: #27272a;
         color: #f3f4f6;
     }
@@ -325,13 +335,14 @@ footer {
         border-color: #374151;
     }
 
-    .testimonial {
-        background: #27272a;
-        color: #f3f4f6;
+    .progress-tracker,
+    .resources,
+    .contact {
+        background: #18181b;
     }
 }
 
-/* Progressive Enhancement Styles */
+/* Progressive Enhancement */
 .fade-in-section {
     opacity: 0;
     transform: translateY(20px);
@@ -345,17 +356,45 @@ footer {
     }
 }
 
-/* Remove JavaScript dependencies */
-.calculator-result {
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 4px;
-    background: rgba(99, 102, 241, 0.1);
+/* Content Cards */
+.testimonial,
+.resource-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Forms */
 .newsletter-form,
 .contact-form {
-    opacity: 1;
+    display: grid;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 2rem auto 0;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background: #6366f1;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background: #4f46e5;
 }
 
 /* Responsive Design */
@@ -368,6 +407,7 @@ footer {
     .nav-links {
         flex-direction: column;
         width: 100%;
+        text-align: center;
     }
 
     .hero h1 {
@@ -378,7 +418,11 @@ footer {
         font-size: 1.2rem;
     }
 
+    .phases {
+        grid-template-columns: 1fr;
+    }
+
     .newsletter-form {
-        flex-direction: column;
+        padding: 0 1rem;
     }
 }
